@@ -1,7 +1,7 @@
 #LetterFrequency.py
-#Name:
-#Date:
-#Assignment:
+#Name: Talia Astorino
+#Date: 02/21/2026
+#Purpose: Analyze how often each letter appears in a message.
 
 #This program will create a CSV file of frequencies based on a text file.
 #Use Excel or similar spreadsheet software to visualize the frequencies of the CSV file.
@@ -18,7 +18,10 @@ def countLetters(message):
     #Find the position in the alphabet
     #Increase the frequency at that position. If position was 5, then frequencies[5] = frequencies[5] + 1
 
-
+    for letter in message:
+        spot = alpha.find(letter)
+        if spot >= 0:
+            freq[spot] = freq[spot] + 1
 
     #Create the output text in the format A,5\n if there were 5 letter A in the message.
     #Remember that the \n is the symbol for a new line.
