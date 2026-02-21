@@ -3,6 +3,9 @@
 #the key.  The resulting message has all the letters advanced by 'key'
 #letters.
 #To run the code, run the main() function
+#Name: Talia Astorino
+#Date: 02/21/2026
+#Purpose: Understanding cypher by shifting the alphabet.
 
 def encode(message, key):
     alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -20,6 +23,18 @@ def encode(message, key):
 
 #def decode(message, key):
     #We will want to decode the message here.
+def decode(message, key):
+    alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    message = message.upper()
+    plaintext = ""
+
+    for letter in message:
+        if (alpha.find(letter) >= 0):
+            spot = (alpha.find(letter) - key) % 26
+            plaintext = plaintext + alpha[spot]
+        else:
+            plaintext = plaintext + letter
+    return plaintext
 
 def main():
     message = input("Enter a message: ")
@@ -29,6 +44,8 @@ def main():
     print ("Encrypted:", secret)
     #plaintext = decode(secret, key)
     #print ("Decrypted:", plaintext)
+    plaintext = decode(secret, key)
+    print ("Decrypted:", plaintext)
 
 
 if __name__ == '__main__':
